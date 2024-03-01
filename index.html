@@ -28,73 +28,82 @@
   li {
     margin-bottom: 5px;
   }
-  .new, .improved {
+  .command {
+    background-color: #f0f0f0;
     font-weight: bold;
-    color: #007700;
+    padding: 2px 4px;
+  }
+  .new-xcode {
+    font-style: italic;
+    font-size: smaller;
+  }
+  .improved-xcode {
+    font-style: italic;
+    font-size: smaller;
   }
 </style>
 </head>
 <body>
-<h1>Vim Commands in Xcode 15 Beta</h1>
+<h1>Xcode 15 Vim Commands Cheatsheet</h1>
 <div class="container">
   <div class="column">
     <h2>Normal Mode Commands</h2>
     <h3>Motion Commands</h3>
     <ul>
-      <li>`h`, `l`, `k`, `j` and arrow keys for basic cursor movement.</li>
-      <li>`0`, `^`, `$` for start, first non-blank character, and end of line.</li>
-      <li>`F{character}`, `f{character}`, `T{character}`, `t{character}`, `;`, `,` for character search within a line.</li>
-      <li>`b`, `w`, `e`, `ge` for word navigation.</li>
-      <li>`{`, `}` for paragraph navigation.</li>
-      <li>`%` for matching bracket jump.</li>
-      <li class="new">`gd` to jump to the definition of a symbol.</li>
+      <li><span class="command">h l k j</span> and arrow keys for basic cursor movement.</li>
+      <li><span class="command">0 ^ $</span> for start, first non-blank character, and end of line.</li>
+      <li><span class="command">F{character} f{character} T{character} t{character} ; ,</span> for character search within a line.</li>
+      <li><span class="command">b w e ge</span> for word navigation.</li>
+      <li><span class="command">{ }</span> for paragraph navigation.</li>
+      <li><span class="command">%</span> for matching bracket jump.</li>
+      <li><span class="command">gd</span> to jump to the definition of a symbol. <span class="new-xcode">Xcode 15</span></li>
     </ul>
     <h3>Scrolling Commands</h3>
     <ul>
-      <li>`^y`, `^e` to scroll viewport up/down by one line.</li>
-      <li>`^u`, `^d`, `⌃b`, `⌃f` for half/full-page scrolls.</li>
-      <li>`z↩`, `zt`, `zz`, `z.`, `z-`, `zb` to reposition viewport with cursor line.</li>
+      <li><span class="command">^y ^e</span> to scroll viewport up/down by one line.</li>
+      <li><span class="command">^u ^d ⌃b ⌃f</span> for half/full-page scrolls.</li>
+      <li><span class="command">z↩ zt zz z. z- zb</span> to reposition viewport with cursor line.</li>
     </ul>
     <h3>Insert and Replace Commands</h3>
     <ul>
-      <li>`i`, `I`, `a`, `A`, `o`, `O` to enter insert mode.</li>
-      <li>`r` for character replacement.</li>
+      <li><span class="command">i I a A o O</span> to enter insert mode.</li>
+      <li><span class="command">r</span> for character replacement.</li>
     </ul>
     <h3>Deleting Text Commands</h3>
     <ul>
-      <li>`x`, `dd`, `D`, `d{motion}` for deleting characters or lines.</li>
-      <li>`J`, `gJ` for joining lines.</li>
-      <li>`c{motion}`, `cc`, `C`, `s`, `S` for change operations.</li>
+      <li><span class="command">x dd D d{motion}</span> for deleting characters or lines.</li>
+      <li><span class="command">J gJ</span> for joining lines.</li>
+      <li><span class="command">c{motion} cc C s S</span> for change operations.</li>
     </ul>
   </div>
   <div class="column">
     <h2>Copying and Moving Text Commands</h2>
     <ul>
-      <li>`yy`, `y{motion}`, `Y` to yank (copy) text.</li>
-      <li>`p`, `P` for pasting.</li>
+      <li><span class="command">yy y{motion} Y</span> to yank (copy) text.</li>
+      <li><span class="command">p P</span> for pasting.</li>
     </ul>
     <h2>Undo and Redo Commands</h2>
     <ul>
-      <li>`u`, `⌃r` to undo and redo changes.</li>
+      <li><span class="command">u ⌃r</span> to undo and redo changes.</li>
     </ul>
     <h2>Visual Commands</h2>
     <ul>
-      <li>`v`, `V`, `^v` to enter visual modes.</li>
-      <li class="new">`%` now works in visual mode for jumping to counterpart.</li>
-      <li class="new">`C-u` and `C-d` with count prefix in visual mode for quick scroll and selection adjustment.</li>
+      <li><span class="command">v V ^v</span> to enter visual modes.</li>
+      <li><span class="command">% now</span> works in visual mode for jumping to counterpart. <span class="new-xcode">Xcode 15</span></li>
+      <li><span class="command">C-u C-d</span> with count prefix in visual mode for quick scroll and selection adjustment. <span class="new-xcode">Xcode 15</span></li>
     </ul>
     <h2>Search Commands</h2>
     <ul>
-      <li>`?`, `/` for searching.</li>
-      <li>`n`, `N` to repeat search.</li>
+      <li><span class="command">? /</span> for searching.</li>
+      <li><span class="command">n N</span> to repeat search.</li>
     </ul>
     <h2>Angle Bracket Block Support</h2>
     <ul>
-      <li class="new">Support for angle bracket block commands (`<`, `>`) for copying, modifying, or deleting contents.</li>
+      <li>Support for angle bracket block commands <span class="command">< ></span> for copying, modifying, or deleting contents. <span class="new-xcode">Xcode 15</span></li>
     </ul>
     <h2>Change Case Commands</h2>
     <ul>
-      <li class="improved">`gu{motion}` and `gU{motion}` now change the case of characters rather than whole words.</li>
+      <li><span class="command">gu{motion} gU{motion}</span> now change the case of characters rather than whole words. <span class="improved-xcode">Improved Xcode 15</span></li>
     </ul>
   </div>
 </div>
