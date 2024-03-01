@@ -7,7 +7,7 @@
 <style>
   body {
     font-family: Arial, sans-serif;
-    padding: 20px;
+    margin: 20px;
   }
   .container {
     display: flex;
@@ -15,14 +15,10 @@
     justify-content: space-between;
   }
   .column {
-    flex: 0 0 48%;
+    flex: 1 0 48%;
+    margin-bottom: 20px;
   }
-  h1 {
-    font-size: 24px;
-    text-align: center;
-  }
-  h2 {
-    font-size: 20px;
+  h1, h2 {
     color: #333;
   }
   ul {
@@ -30,42 +26,75 @@
     padding: 0;
   }
   li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+  }
+  .new, .improved {
+    font-weight: bold;
+    color: #007700;
   }
 </style>
 </head>
 <body>
-<h1>Xcode 15 Vim Commands Cheatsheet</h1>
+<h1>Vim Commands in Xcode 15 Beta</h1>
 <div class="container">
   <div class="column">
     <h2>Normal Mode Commands</h2>
+    <h3>Motion Commands</h3>
     <ul>
-      <li><strong>Motion:</strong> <code>h, j, k, l</code> - Move cursor</li>
-      <li><strong>Scrolling:</strong> <code>Ctrl+d/u</code> - Half page down/up</li>
-      <li><strong>Editing:</strong> <code>x, dd, yy</code> - Delete char/line, yank line</li>
-      <li><strong>Inserting:</strong> <code>i, a, o, O</code> - Insert mode entries</li>
-      <li><strong>Search:</strong> <code>/, ?</code> - Search forward/backward</li>
+      <li>`h`, `l`, `k`, `j` and arrow keys for basic cursor movement.</li>
+      <li>`0`, `^`, `$` for start, first non-blank character, and end of line.</li>
+      <li>`F{character}`, `f{character}`, `T{character}`, `t{character}`, `;`, `,` for character search within a line.</li>
+      <li>`b`, `w`, `e`, `ge` for word navigation.</li>
+      <li>`{`, `}` for paragraph navigation.</li>
+      <li>`%` for matching bracket jump.</li>
+      <li class="new">`gd` to jump to the definition of a symbol.</li>
     </ul>
-
-    <h2>New & Improved in Xcode 15</h2>
+    <h3>Scrolling Commands</h3>
     <ul>
-      <li><code>gd</code> - Jump to definition</li>
-      <li>Angle brackets support</li>
-      <li><code>%</code> in Visual mode - Jump to counterpart</li>
+      <li>`^y`, `^e` to scroll viewport up/down by one line.</li>
+      <li>`^u`, `^d`, `⌃b`, `⌃f` for half/full-page scrolls.</li>
+      <li>`z↩`, `zt`, `zz`, `z.`, `z-`, `zb` to reposition viewport with cursor line.</li>
+    </ul>
+    <h3>Insert and Replace Commands</h3>
+    <ul>
+      <li>`i`, `I`, `a`, `A`, `o`, `O` to enter insert mode.</li>
+      <li>`r` for character replacement.</li>
+    </ul>
+    <h3>Deleting Text Commands</h3>
+    <ul>
+      <li>`x`, `dd`, `D`, `d{motion}` for deleting characters or lines.</li>
+      <li>`J`, `gJ` for joining lines.</li>
+      <li>`c{motion}`, `cc`, `C`, `s`, `S` for change operations.</li>
     </ul>
   </div>
-
   <div class="column">
-    <h2>Visual Mode Commands</h2>
+    <h2>Copying and Moving Text Commands</h2>
     <ul>
-      <li><code>v, V, Ctrl+v</code> - Visual mode variations</li>
-      <li><strong>Text Objects:</strong> <code>aw, iw</code> - A/inner word</li>
+      <li>`yy`, `y{motion}`, `Y` to yank (copy) text.</li>
+      <li>`p`, `P` for pasting.</li>
     </ul>
-
-    <h2>Insert Mode Commands</h2>
+    <h2>Undo and Redo Commands</h2>
     <ul>
-      <li><code>Esc</code> - Return to Normal mode</li>
-      <li><code>Ctrl+r {reg}</code> - Paste from register</li>
+      <li>`u`, `⌃r` to undo and redo changes.</li>
+    </ul>
+    <h2>Visual Commands</h2>
+    <ul>
+      <li>`v`, `V`, `^v` to enter visual modes.</li>
+      <li class="new">`%` now works in visual mode for jumping to counterpart.</li>
+      <li class="new">`C-u` and `C-d` with count prefix in visual mode for quick scroll and selection adjustment.</li>
+    </ul>
+    <h2>Search Commands</h2>
+    <ul>
+      <li>`?`, `/` for searching.</li>
+      <li>`n`, `N` to repeat search.</li>
+    </ul>
+    <h2>Angle Bracket Block Support</h2>
+    <ul>
+      <li class="new">Support for angle bracket block commands (`<`, `>`) for copying, modifying, or deleting contents.</li>
+    </ul>
+    <h2>Change Case Commands</h2>
+    <ul>
+      <li class="improved">`gu{motion}` and `gU{motion}` now change the case of characters rather than whole words.</li>
     </ul>
   </div>
 </div>
